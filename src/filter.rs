@@ -200,7 +200,7 @@ impl<'a> RayTracing<'a> {
     /// sets the dimensions of the denoising image, if new width * new height
     /// does not equal old width * old height
     pub fn image_dimensions(&mut self, width: usize, height: usize) -> &mut RayTracing<'a> {
-        let buffer_dims = 3 * width * height;
+        let buffer_dims = 4 * 4 * width * height;
         match &self.albedo {
             None => {}
             Some(buffer) => {
@@ -326,7 +326,7 @@ impl<'a> RayTracing<'a> {
                 self.img_dims.0 as _,
                 self.img_dims.1 as _,
                 0,
-                0,
+                128,
                 0,
             );
         }
