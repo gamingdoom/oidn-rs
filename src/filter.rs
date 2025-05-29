@@ -322,11 +322,11 @@ impl<'a> RayTracing<'a> {
                 self.handle,
                 b"color\0" as *const _ as _,
                 color_buffer.buf,
-                OIDNFormat_OIDN_FORMAT_FLOAT4,
+                OIDNFormat_OIDN_FORMAT_FLOAT3,
                 self.img_dims.0 as _,
                 self.img_dims.1 as _,
                 0,
-                0,
+                128,
                 0,
             );
         }
